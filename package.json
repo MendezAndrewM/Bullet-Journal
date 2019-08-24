@@ -1,0 +1,25 @@
+{
+  "name": "bullet-journal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MendezAndrewM/Bullet-Journal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MendezAndrewM/Bullet-Journal/issues"
+  },
+  "homepage": "https://github.com/MendezAndrewM/Bullet-Journal#readme",
+  "dependencies": {
+    "express": "4.17.1",
+    "dotenv": "8.0.0",
+    "sequelize": "5.13.1",
+    "mysql2": "1.6.5"
+  }
+}
