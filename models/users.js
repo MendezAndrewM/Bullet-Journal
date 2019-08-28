@@ -1,16 +1,11 @@
 module.exports = (sequelize, DataTypes) => {  
     const Users = sequelize.define('users', {
-      
-      user_id: {
-        type: DataTypes.INTERGER,
-        required: true
-      },
-      user_code: {
-        type: DataTypes.VARCHAR,
+        user_code: {
+        type: DataTypes.STRING,
         required: true
             },
       pass_code: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         required: true
       }   
     });
