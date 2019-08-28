@@ -9,14 +9,19 @@ router.get("/api/users",(req,res)=> {
         where:{
             user_name: req.body.user
         }
-    }).then((results=>{
+    }).then((results)=>{
         if (res.data === undefined){
 
         }
         else if(res.data.password === true){
             res.json(results)
         }
+        else{
+            alert("Password was wrong")
+        }
 
     })
 
-})
+});
+
+module.exports = router;
