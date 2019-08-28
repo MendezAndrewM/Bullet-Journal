@@ -19,6 +19,14 @@
   "homepage": "https://github.com/MendezAndrewM/Bullet-Journal#readme",
   "dependencies": {
     "dotenv": "8.0.0",
+<<<<<<< HEAD
+    "express": "4.17.1",
+    "materialize-css": "^1.0.0-rc.2",
+    "mysql2": "1.6.5",
+    "sequelize": "5.13.1",
+    "bcrypt": "^3.0.6"
+  }
+=======
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "mysql2": "^1.6.5",
@@ -29,4 +37,5 @@
     "test": "test"
   },
   "devDependencies": {}
+>>>>>>> e44476ce17fbf774b388446560c3948a84733d02
 }
