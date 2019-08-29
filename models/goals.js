@@ -1,23 +1,18 @@
 module.exports = (sequelize, DataTypes) => {  
   const Goals = sequelize.define('goals', {
     
-
-    id: {
-      type: DataTypes.INTERGER,
-      required: true
-    },
     user_code: {
-      type: DataTypes.VARCHAR,
+      type: DataTypes.STRING,
       required: true
     },
     goal_name: {
-      type: DataTypes.VARCHAR,
+      type: DataTypes.STRING,
       required: true
           },
     complete: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
-    }   
+    }
   });
   return Goals;
 };
