@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {  
   const Goals = sequelize.define('goals', {
     
-    user_code: {
+   user_code: {
       type: DataTypes.STRING,
       required: true
     },
