@@ -1,20 +1,16 @@
 module.exports = (sequelize, DataTypes) => {  
     const Users = sequelize.define('users', {
-      
-      id: {
-        type: DataTypes.INTERGER,
-        required: true
-      },
+  
       user_code: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         required: true
             },
       tasks: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         required: true
       },
       task_frequency: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         },
         complete: {
             type: DataTypes.BOOLEAN,
