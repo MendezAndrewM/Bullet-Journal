@@ -1,16 +1,16 @@
-// // var mysql = require('mysql');
+// var mysql = require('mysql');
 // var express = require('express');
-// // var session = require('express-session');
-// // var bodyParser = require('body-parser');
-// // var path = require('path');
+// var session = require('express-session');
+// var bodyParser = require('body-parser');
+// var path = require('path');
 
-// // const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 // const saltRounds = 10;
 // const myPlaintextPassword = 's0/\/\P4$$w0rD';
 // const someOtherPlaintextPassword = 'not_bacon';
 
 // // //put following code into controller folder:
-// // //sync
+// //sync
 // const bcrypt = require('bcrypt');
 // const saltRounds = 10;
 // // Store hash in your password DB.
