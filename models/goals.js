@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     complete: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
-    }   
+    }
   });
   return Goals;
 };
