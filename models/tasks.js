@@ -1,5 +1,5 @@
-module.exports = (sequelize, DataTypes) => {  
-    const Users = sequelize.define('users', {
+module.exports = function (sequelize, DataTypes) {  
+    const Tasks = sequelize.define('task', {
   
       user_code: {
         type: DataTypes.STRING,
@@ -17,5 +17,5 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: false
         }
     });
-    return Users;
+    return Tasks;
   };
