@@ -25,6 +25,26 @@ module.exports = function (app) {
         .then(dbTask => res.json(dbTask));
     });
     // Users/api
+    app.get("/api/users", (req, res) => {
+        db.Users.findOne({
+            where: {
+                user_name: req.body.user
+            }
+        }).then((results) => {
+            if (res.data === undefined) {
+                
+            }
+            else if (res.data.password === true) {
+                res.json(results)
+            }
+            else {
+                alert("Password was wrong")
+            }
+            
+        })
+    });
+    //            
+    //      Or:
     // app.get("/api/users", (req, res) => {
     //     db.Users.findAll({ include: [db.Users]})
     //     .then(dbUsers => res.json(dbUsers));
@@ -33,28 +53,8 @@ module.exports = function (app) {
     //     db.Users.findOne({ where: {id: req.params.id }, include: [db.Users]})
     //     .then(dbUsers => res.json(dbUsers));
     // });
-    //            
-    //      Or:
-    app.get("/api/users", (req, res) => {
-        db.Users.findOne({
-            where: {
-                user_name: req.body.user
-            }
-        }).then((results) => {
-            if (res.data === undefined) {
-
-            }
-            else if (res.data.password === true) {
-                res.json(results)
-            }
-            else {
-                alert("Password was wrong")
-            }
-
-        })
-    });
-
-
+    
+    
     ///////////////////////////////////////////////////////////////////////////
     /////////// POST Routes ///////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
@@ -97,5 +97,5 @@ module.exports = function (app) {
         .then(dbGoal =>  res.json(dbGoal));
     });
 
-    
+
 }
