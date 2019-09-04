@@ -1,12 +1,9 @@
- 
 
   // Or with jQuery
   $(document).ready(function(){
     // let newTaskUser;
     // let newTask;
     // let newTaskFreq ;
-
-
     // $("#submit-btn").on("click", function(){
     //   alert("zeb you suck")
     //    newTaskUser = $("#user-name").val();
@@ -18,7 +15,6 @@
     // });
     $("#submit-btn").on("click", insertNewTask);
     
-
     function insertNewTask(event){
       event.preventDefault();
       const task ={
@@ -31,21 +27,13 @@
       $("#user-name").val("");
       $("#user-task").val("");
       $("#user-frequency").val("");
-    }
+    
     }
      
     
-
-
-
-
-
   //   let userName = $("#user-name");
   //   let userTask = $("#user-task");
   //   let userFrequency = $("#user-frequency")
-
-  
-  
   
   
   //   const url = window.location.search;
@@ -84,14 +72,9 @@
   //     blogContainer.append(postsToAdd);
   //   }
   
-
     /////////////////carousel//////////////////
   
    
     $('.carousel').carousel();
-
-
   
-
-
 });
