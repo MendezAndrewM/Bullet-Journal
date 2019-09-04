@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS bulletJournal_db;
+-- DROP DATABASE IF EXISTS bulletJournal_db;
 CREATE DATABASE bulletJournal_db;
 Use bulletJournal_db;
 
