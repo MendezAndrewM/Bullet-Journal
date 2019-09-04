@@ -32,7 +32,7 @@
       $("#user-task").val("");
       $("#user-frequency").val("");
     }
-    }
+    
      
     
 
