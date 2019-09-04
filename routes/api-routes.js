@@ -99,3 +99,26 @@ module.exports = function (app) {
 
 
 }
+//     app.post("/Tasks", function(req, res) {
+//         db.create(req.body).then(function(results) {
+//           res.json(results);
+//         });
+//       });
+// }
+
+
+
+
+// /////////////////////////for password future//////////////////////////
+// .then((results)=>{
+//     if (res.data === undefined){
+
+//     }
+//     else if(res.data.password === true){
+//         res.json(results)
+//     }
+//     else{
+//         alert("Password was wrong")
+//     }
+
+// })
