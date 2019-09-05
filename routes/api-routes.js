@@ -16,8 +16,7 @@ module.exports = function (app) {
         .then(dbGoal => res.json(dbGoal));
     });
     // Tasks/api
-    app.get("/api/tasks", (req, res) => {
-        console.log("hi jason")
+    app.get("/api/tasks", (req, res) => {        
         db.Tasks.findAll({})
         .then(dbTask => res.json(dbTask));
     });
@@ -61,13 +60,13 @@ module.exports = function (app) {
     ///////////////////////////////////////////////////////////////////////////
     
     app.post("/", (req, res) => {
-        db.tasks.create(req.body).then(dbPost => res.json(dbPost));
+        db.Tasks.create(req.body).then(dbPost => res.json(dbPost));
     });
     app.post("/api/goals", (req, res) => {
-        db.goals.create(req.body).then(dbPost => res.json(dbPost));
+        db.Goals.create(req.body).then(dbPost => res.json(dbPost));
     });
     app.post("/api/users", (req, res) => {
-        db.users.create(req.body).then(dbPost => res.json(dbPost));
+        db.Users.create(req.body).then(dbPost => res.json(dbPost));
     });
 
 
@@ -76,11 +75,11 @@ module.exports = function (app) {
     ///////////////////////////////////////////////////////////////////////////
 
     app.delete("/api/tasks/:id", (req, res) => {
-        db.tasks.destroy({ where: { id: req.params.id }})
+        db.Tasks.destroy({ where: { id: req.params.id }})
         .then(dbTask =>  res.json(dbTask));
     });
     app.delete("/api/goals/:id", (req, res) => {
-        db.goals.destroy({ where: { id: req.params.id }})
+        db.Goals.destroy({ where: { id: req.params.id }})
         .then(dbGoal =>  res.json(dbGoal));
     });
 
@@ -100,41 +99,8 @@ module.exports = function (app) {
 
 
 }
-//     app.post("/Tasks", function(req, res) {
-//         db.create(req.body).then(function(results) {
-//           res.json(results);
-//         });
-//       });
-// }
 
 
 
 
-// /////////////////////////for password future//////////////////////////
-// .then((results)=>{
-//     if (res.data === undefined){
 
-//     }
-//     else if(res.data.password === true){
-//         res.json(results)
-//     }
-//     else{
-//         alert("Password was wrong")
-//     }
-
-// })
-
-
-// /////////////////////////for password future//////////////////////////
-// .then((results)=>{
-//     if (res.data === undefined){
-
-//     }
-//     else if(res.data.password === true){
-//         res.json(results)
-//     }
-//     else{
-//         alert("Password was wrong")
-//     }
-
-// })

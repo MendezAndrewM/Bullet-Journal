@@ -1,5 +1,3 @@
-
-
 // Or with jQuery
 $(document).ready(function () {
 
@@ -58,10 +56,12 @@ $(document).ready(function () {
 
   function createNewTaskRow(task){
     const newTaskRow = $([
-      "<span>",
+      "<p>",
       task.user_code,
+      "</p>",
+      "<p>",
       task.tasks,
-      "<span>"
+      "</p>"
 
 
     ].join("")
