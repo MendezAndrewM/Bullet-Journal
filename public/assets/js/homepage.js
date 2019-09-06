@@ -4,6 +4,10 @@ $(document).ready(function () {
 
   const goalsContainer = $(".goals-container");
 
+
+  $(document).on("click", "button.delete", deleteGoal);
+  $(document).on("click", "button.complete", toggleComplete);
+
 console.log("hello")
 
   let goals = []
@@ -32,7 +36,7 @@ console.log("hello")
     console.log(goal)
     $.post("/api/goals", goal);
     $("#user-name").val("");
-    $("#user-task").val("");
+    $("#user-goal").val("");
     // $("#user-frequency").val("");
   };
 
@@ -51,9 +55,11 @@ console.log("hello")
       "<p>",
       goal.user_code,
       "</p>",
-      "<p>",
+      "<span>",
       goal.goal_name,
-      "</p>"
+      "</span>",
+      "<button class='complete btn btn-primary'>✓</button>",
+      "<button class='delete btn btn-danger'>x</button>"
 
 
     ].join("")
@@ -65,6 +71,10 @@ return newGoalRow
   }
   getGoals();
 
+
+  function deleteGoal(event){
+    event.stopPropagation();
+  }
 
 
 
