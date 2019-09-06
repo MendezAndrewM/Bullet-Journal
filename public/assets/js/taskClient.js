@@ -30,6 +30,17 @@ $(document).ready(function () {
     }
     getDailyTasks();
   }
+  else if (document.location.pathname === '/weekly'){
+    function getWeeklyTasks() {
+      $.get("/api/weekly", function (data) {        
+        tasks = data;      
+        console.log(tasks)
+        initializeTaskRows();
+        
+      })
+    }
+    getWeeklyTasks();
+  }
   
   
   

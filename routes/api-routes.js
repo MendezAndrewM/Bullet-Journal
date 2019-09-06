@@ -28,6 +28,15 @@ module.exports = function (app) {
         db.Tasks.findAll({where: {task_frequency:'daily'}})
         .then(dbTask => res.json(dbTask));
     });
+    app.get("/api/weekly", (req, res) => {
+        db.Tasks.findAll({where: {task_frequency:'weekly'}})
+        .then(dbTask => res.json(dbTask));
+    });
+    app.get("/api/monthly", (req, res) => {
+        db.Tasks.findAll({where: {task_frequency:'monthly'}})
+        .then(dbTask => res.json(dbTask));
+    });
+    
     
  
   
