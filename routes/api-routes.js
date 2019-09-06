@@ -79,11 +79,11 @@ module.exports = function (app) {
     ///////////////////////////////////////////////////////////////////////////
 
     app.delete("/api/tasks/:id", (req, res) => {
-        db.tasks.destroy({ where: { id: req.params.id }})
+        db.Tasks.destroy({ where: { id: req.params.id }})
         .then(dbTask =>  res.json(dbTask));
     });
     app.delete("/api/goals/:id", (req, res) => {
-        db.goals.destroy({ where: { id: req.params.id }})
+        db.Goals.destroy({ where: { id: req.params.id }})
         .then(dbGoal =>  res.json(dbGoal));
     });
 
