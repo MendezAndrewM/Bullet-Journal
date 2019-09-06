@@ -104,6 +104,7 @@ return newGoalRow
 
 
   $('.carousel').carousel();
+  $('select').formSelect();
 
 
 

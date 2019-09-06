@@ -6,54 +6,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>All Goals</title>
 
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
 
- <!-- Plotly.js -->
- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 </head>
 
 
 <body>
     <div>
-        <img src="assets/images/Marblelogotransparent.png" alt="Marble logo transparent" style="width:180px;height:130px;" />
+        <a href="homepage.html"><img src="./assets/images/Marblelogonew.png" title="hyperlink"
+                style="width:300px;height:140px;" /></a>
     </div>
+
+
 
     <div class="container">
 
-    <section id="row">
-       
-        <div class="cust-quotes center-align">
-            <blockquote data-timeout="1800">
-                <p>Push yourself, because no one else is going to do it for you.</p><cite></cite>
-            </blockquote>
-            <blockquote data-timeout="3800">
-                <p>Sometimes later becomes never. Do it now.</p><cite></cite>
-            </blockquote>
-            <blockquote data-timeout="3800">
-                <p>Work hard, be kind, and amazing things will happen. Conan O’Brien</p><cite></cite>
-            </blockquote>
-            <blockquote data-timeout="3800">
-                <p>Great things never come from comfort zones.</p><cite></cite>
-            </blockquote>
-            <blockquote data-timeout="3800">
-                <p>Dream it. Wish it. Do it.</p><cite></cite>
-            </blockquote>
-            <blockquote data-timeout="3800">
-                <p>I wasn’t there to compete. I was there to win. -Arnold Schwarzenegger</p><cite></cite>
-            </blockquote>
-            <blockquote data-timeout="3800">
-                <p>Success doesn’t just find you. You have to go out and get it.</p><cite></cite>
-            </blockquote>
-            <blockquote data-timeout="3800">
-                <p>Never bend your head. Hold it high. Look the world straight in the eye. -Helen Keller</p>
-                <cite></cite>
-            </blockquote>
+        <section id="row">
+
+            <div class="cust-quotes center-align">
+                <blockquote data-timeout="1800">
+                    <p>Push yourself, because no one else is going to do it for you.</p><cite></cite>
+                </blockquote>
+                <blockquote data-timeout="3800">
+                    <p>Sometimes later becomes never. Do it now.</p><cite></cite>
+                </blockquote>
+                <blockquote data-timeout="3800">
+                    <p>Work hard, be kind, and amazing things will happen. Conan O’Brien</p><cite></cite>
+                </blockquote>
+                <blockquote data-timeout="3800">
+                    <p>Great things never come from comfort zones.</p><cite></cite>
+                </blockquote>
+                <blockquote data-timeout="3800">
+                    <p>Dream it. Wish it. Do it.</p><cite></cite>
+                </blockquote>
+                <blockquote data-timeout="3800">
+                    <p>I wasn’t there to compete. I was there to win. -Arnold Schwarzenegger</p><cite></cite>
+                </blockquote>
+                <blockquote data-timeout="3800">
+                    <p>Success doesn’t just find you. You have to go out and get it.</p><cite></cite>
+                </blockquote>
+                <blockquote data-timeout="3800">
+                    <p>Never bend your head. Hold it high. Look the world straight in the eye. -Helen Keller</p>
+                    <cite></cite>
+                </blockquote>
             </div>
         </section>
 
@@ -75,30 +78,30 @@
 
         <div class ="goals-container"></div>
 
-<div class="whiteBox">
-    <div class="row">
-        <form class="col s12">
+        <div class="whiteBox">
             <div class="row">
                 <form class="col s12">
                     <div class="row">
-                        <div class="input-field col s12">
-                            <textarea id="user-name" class="materialize-textarea"></textarea>
-                            <label for="textarea1">User Name</label>
-                        </div>
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="user-name" class="materialize-textarea"></textarea>
+                                    <label for="textarea1">User Name</label>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
-            <div class="row">
-                <form class="col s12">
                     <div class="row">
-                        <div class="input-field col s12">
-                            <textarea id="user-goal" class="materialize-textarea"></textarea>
-                            <label for="textarea1">Task</label>
-                        </div>
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="user-goal" class="materialize-textarea"></textarea>
+                                    <label for="textarea1">Task</label>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
-            <!-- <div class="row">
+                    <!-- <div class="row">
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s12">
@@ -110,13 +113,13 @@
             </div>
         </form>
     </div> -->
-</div>
-    <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">Submit
-        <i class="material-icons right">send</i>
-    </button>
+            </div>
+            <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
 
 
-    <!-- <br>
+            <!-- <br>
     <br>
     <a class="waves-effect waves-light btn-small"><i class="material-icons left" class="add-button">Add a Task</i></a>
     &nbsp;
@@ -145,22 +148,22 @@
             Goal Four:
             <br>
         </div> -->
-        
-
-
-        <!-- Bar chart -->
-
-        <!-- Plotly chart will be drawn inside this div -->
-        <div id="myDiv"></div>
-
-        <!-- Javascript linked on the .js file -->
 
 
 
+            <!-- Bar chart -->
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script type="text/javascript" src="assets/js/homepage.js"></script>
+            <!-- Plotly chart will be drawn inside this div -->
+            <div id="myDiv"></div>
+
+            <!-- Javascript linked on the .js file -->
+
+
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <script type="text/javascript" src="assets/js/homepage.js"></script>
 </body>
 
 </html>
