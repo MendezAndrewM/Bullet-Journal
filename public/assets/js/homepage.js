@@ -5,7 +5,7 @@ $(document).ready(function () {
   let goals;
 
 
-  // $(document).on("click", "button.delete", deleteGoal);
+  $(document).on("click", "button.delete", deleteGoal);
   // $(document).on("click", "button.complete", toggleComplete);
 
 console.log("hello")
@@ -58,7 +58,7 @@ console.log("hello")
       goal.goal_name,
       "</span>",
       "<button class='complete btn btn-primary'>✓</button>",
-      "<button class='delete btn btn-danger'>x</button>"
+      `<button class='delete btn btn-danger'id = ${goal.id}>x</button>`
 
 
     ].join("")
@@ -71,9 +71,17 @@ return newGoalRow
   getGoals();
 
 
-  // function deleteGoal(event){
-  //   event.stopPropagation();
-  // }
+  function deleteGoal(event){
+    event.stopPropagation();
+    id = $(this).attr("id")
+    console.log(id)
+    $.ajax({
+      method: "DELETE",
+      url: "/api/goals/" +id
+    }).then(getGoals)
+
+
+  }
 
 
 
