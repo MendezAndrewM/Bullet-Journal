@@ -5,9 +5,9 @@
 
 /* background marble image */
 body {
-  background: url(marblenew.png);
-
-    background-size:cover;
+  background-image: url("../images/marblenew.png");
+  background-repeat: repeat-y;
+  background-size: 100%;
   }
 
 
