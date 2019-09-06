@@ -5,8 +5,8 @@ $(document).ready(function () {
   let goals;
 
 
-  $(document).on("click", "button.delete", deleteGoal);
-  $(document).on("click", "button.complete", toggleComplete);
+  // $(document).on("click", "button.delete", deleteGoal);
+  // $(document).on("click", "button.complete", toggleComplete);
 
 console.log("hello")
 
