@@ -17,7 +17,7 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/allGoals.html"));
   });
 
-  app.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+  app.get("/tasks", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/allTasks.html"));
   })
 }

@@ -15,6 +15,7 @@ console.log("hello")
       goals = data;      
       console.log(goals)
       initializeGoalRows();
+      
     })
   }
 
@@ -25,7 +26,7 @@ console.log("hello")
 
   function insertNewGoal(event) {
     event.preventDefault();
-    alert("zeb sucks")
+    // alert("zeb sucks")
     const goal = {
       user_code: $("#user-name").val().trim(),
       goal_name: $("#user-goal").val().trim(),
@@ -42,11 +43,16 @@ console.log("hello")
   function initializeGoalRows() {
     goalsContainer.empty();
     const rowsToAdd = [];
+    const button = [];
     for (let i = 0; i < goals.length; i++){
       rowsToAdd.push(createNewGoalRow(goals[i]));
+      button.push(buttonTest(goals[i]))
     }
     goalsContainer.prepend(rowsToAdd)
 
+  }
+  function buttonTest(goal){
+    `<button class='complete btn btn-primary'>${goal.user_code}</button>`
   }
 
   function createNewGoalRow(goal){
@@ -57,8 +63,9 @@ console.log("hello")
       "<span>",
       goal.goal_name,
       "</span>",
-      "<button class='complete btn btn-primary'>✓</button>",
-      `<button class='delete btn btn-danger'id = ${goal.id}>x</button>`
+      `<button class='complete btn btn-primary'>✓</button>`,
+      `<button class='delete btn btn-danger'id = ${goal.id}>x</button>`,
+      
 
 
     ].join("")
@@ -77,11 +84,12 @@ return newGoalRow
     console.log(id)
     $.ajax({
       method: "DELETE",
-      url: "/api/goals/" +id
+      url: "/api/goals/" + id
     }).then(getGoals)
 
 
   }
+ 
 
 
 
