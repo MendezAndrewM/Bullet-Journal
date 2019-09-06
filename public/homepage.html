@@ -14,15 +14,22 @@
  <!-- Plotly.js -->
  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="assets/css/homepage.css"> -->
+  <!-- <link rel="stylesheet" href="assets/css/styles.css"> -->
+
 </head>
 
 
 <body>
-    <div>
-        <img src="images/Marblelogotransparent.png" alt="Marble logo transparent" style="width:180px;height:130px;" />
-    </div>
+  
+  <div>
+    <img src="assets/images/Marblelogotransparent.png" alt="Marble logo transparent" style="width:180px;height:130px;" />
+  </div>
+  <div class= test><h1>TEST!</h1></div>
 
-    <div class="container">
+
+  <div class="container">
 
     <section id="row">
         <!-- <h4 class="sec-head">Here what others had to say&hellip;</h4> -->
@@ -61,99 +68,57 @@
 <br>
 
 
+  <div class="carousel">
+    <a class="carousel-item" href="#three!"><img src="assets/images/postityellow.png"></a>
+    <a class="carousel-item" href="#two!"><img src="assets/images/postitgreen.png"></a>
+    <a class="carousel-item" href="#one"><img src="assets/images/postitblue.png"></a>
+    <a class="carousel-item" href="#five!"><img src="assets/images/postitred.png"></a>
+    <a class="carousel-item" href="#four!"><img src="assets/images/postitpurple.png"></a>
+  </div>
+  <span class="task-container">
 
-
-    <div class="carousel">
-        <a class="carousel-item" href="weekly.html"><img src="images/postityellow.png"></a>
-        <a class="carousel-item" href="daily.html"><img src="images/postitgreen.png"></a>
-        <a class="carousel-item" href="monthly.html"><img src="images/postitblue.png"></a>
-        <a class="carousel-item" href="allGoals.html"><img src="images/postitred.png"></a>
-        <a class="carousel-item" href="allTasks.html"><img src="images/postitpurple.png"></a>
-
-    </div>
-
-<div class="whiteBox">
-    <div class="row">
-        <form class="col s12">
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="user-name" class="materialize-textarea"></textarea>
-                    <label for="textarea1">User Name</label>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="row">
-        <form class="col s12">
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="user-task" class="materialize-textarea"></textarea>
-                    <label for="textarea1">Task</label>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="row">
-        <form class="col s12">
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="user-frequency" class="materialize-textarea"></textarea>
-                    <label for="textarea1">How often?</label>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-    <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">Submit
-        <i class="material-icons right">send</i>
-    </button>
-
-
-    <br>
-    <br>
-    <a class="waves-effect waves-light btn-small"><i class="material-icons left" class="add-button">Add a Task</i></a>
-    &nbsp;
-    <a class="waves-effect waves-light btn-small"><i class="material-icons left" class="delete-button">Delete a
-            Task</i></a>
-            &nbsp;
-    <a class="waves-effect waves-light btn-small"><i class="material-icons right" class="update-button">Updating
-            Task</i></a>
-            &nbsp;
-    <a class="waves-effect waves-light btn-small"><i class="material-icons right" class="completed-button">Completed
-            Tasks</i></a>
-
-
-
-            <br>
-            <br>
-            <div class="whiteBox">
-            Track Your Monthly Goals:
-            <br>
-            Goal One:
-            <br> 
-            Goal Two:
-            <br>
-            Goal Three:
-            <br>
-            Goal Four:
-            <br>
-            </div>
-     
+    </span>
+  
+  <!-- ​<div class = "insert-task"> -->
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="user-name" class="materialize-textarea"></textarea>
+          <label for="textarea1">User Name</label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="user-task" class="materialize-textarea"></textarea>
+          <label for="textarea1">Task</label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="user-frequency" class="materialize-textarea"></textarea>
+          <label for="textarea1">How often?</label>
+        </div>
+      </div>
+    </form>
+    
+  </div>
+  <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+<!-- </div> -->
 <br>
-<br>
-
-            <!-- Bar chart -->
-          
-            <!-- Plotly chart will be drawn inside this div -->
-                <div id="myDiv"></div>
-
-           <!-- Javascript linked on the .js file -->
-
-                
-
-
-
-
+<a class="waves-effect waves-light btn-small"><i class="material-icons left" class="add-button" id ="add-button">Add a Task</i></a>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

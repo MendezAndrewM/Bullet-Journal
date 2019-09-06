@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {  
-  const Goals = sequelize.define('goal', {
+  const Goals = sequelize.define('Goals ', {
     
    user_code: {
       type: DataTypes.STRING,
