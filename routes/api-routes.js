@@ -74,7 +74,7 @@ module.exports = function (app) {
     /////////// DELETE Routes /////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
 
-    app.delete("/api/tasks/:id", (req, res) => {
+    app.delete("/", (req, res) => {
         db.Tasks.destroy({ where: { id: req.params.id }})
         .then(dbTask =>  res.json(dbTask));
     });
@@ -88,8 +88,8 @@ module.exports = function (app) {
     /////////// PUT Routes ////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
 
-    app.put("/api/tasks" , (req, res) => {
-        db.Tasks.update(req.body, {where: { id: req.body.id }})
+    app.put("/" , (req, res) => {
+        db.Tasks.update(req.body, {where: { id: req.body.user_name }})
         .then(dbTask =>  res.json(dbTask));
     });
     app.put("/api/goals" , (req, res) => {

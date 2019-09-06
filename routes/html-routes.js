@@ -7,9 +7,9 @@ module.exports = function(app){
         res.sendFile(path.join(__dirname, "../public/homepage.html"));
       });
 
-      // app.get("/api/tasks", function(req, res) {
-      //   res.sendFile(path.join(__dirname, "../public/allTasks.html"));
-      // });
+      app.get("/api/goals", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/goals.html"));
+      });
 
 
 }

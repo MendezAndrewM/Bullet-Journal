@@ -5,20 +5,7 @@ $(document).ready(function () {
   $(document).on("click", "button.complete", toggleComplete);
   $(document).on("click", "button.delete", deleteTask);
 
-  // let newTaskUser;
-  // let newTask;
-  // let newTaskFreq ;
-
-
-  // $("#submit-btn").on("click", function(){
-  //   alert("zeb you suck")
-  //    newTaskUser = $("#user-name").val();
-  //    console.log(newTaskUser)
-  //    newTask = $("#user-task").val();
-  // console.log(newTask)
-  //   newTaskFreq = $("#user-frequency").val();
-  //   console.log(newTaskFreq)
-  // });
+  
   let tasks = []
   function getTasks() {
     $.get("/api/tasks", function (data) {
@@ -41,7 +28,7 @@ $(document).ready(function () {
       task_frequency: $("#user-frequency").val().trim(),
       complete: false
     }
-    $.post("/api/tasks", task);
+    $.post("/", task);
     $("#user-name").val("");
     $("#user-task").val("");
     $("#user-frequency").val("");
@@ -82,7 +69,7 @@ return newTaskRow
 function updateTask(task){
   $.ajax({
     method: "PUT",
-    url: "/api/tasks",
+    url: "/",
     data: task
   }).then(getTasks)
 }
@@ -90,10 +77,10 @@ function updateTask(task){
 
 function toggleComplete(event) {
   event.stopPropagation();
-  const task = $(this).parent().data();
+  const task = $(this).parent().data();   
   console.log(task)
   task.complete = !task.complete;
-  updateTask(task);
+  updateTask();
 }
 
 function deleteTask(event) {
@@ -101,7 +88,7 @@ function deleteTask(event) {
   const id = $(this).data("id");
   $.ajax({
     method: "DELETE",
-    url: "/api/tasks/" + id
+    url: "/" + id
   }).then(getTasks);
 }
 
@@ -114,54 +101,6 @@ getTasks();
 
 
 
-
-
-  //   let userName = $("#user-name");
-  //   let userTask = $("#user-task");
-  //   let userFrequency = $("#user-frequency")
-  
-  
-  
-  
-
-  //   const url = window.location.search;
-  //   let taskId;
-  //   if (url.indexOf("?task_id=") !== -1) {
-  //     taskId = url.split("=")[1];
-  //     getTasks(taskId);
-  //   }
-  //   // If there's no authorId we just get all posts as usual
-  //   else {
-  //     getTasks();
-  //   }
-
-  //   function getTasks(task) {
-  //     taskId = task || "";
-  //     if (taskId) {
-  //       taskId = "/?task_id=" + taskId;
-  //     }
-  //     $.get("/" + taskId, function(data) {
-  //       console.log("Tasks", data);
-  //       tasks = data;
-  //       if (!tasks || !tasks.length) {
-  //         displayEmpty(task);
-  //       }
-  //       else {
-  //         initializeRows();
-  //       }
-  //     });
-  //   }
-  //   function initializeRows() {
-  //     blogContainer.empty();
-  //     var postsToAdd = [];
-  //     for (var i = 0; i < posts.length; i++) {
-  //       postsToAdd.push(createNewRow(posts[i]));
-  //     }
-  //     blogContainer.append(postsToAdd);
-  //   }
-
-
-  /////////////////carousel//////////////////
 
 
   $('.carousel').carousel();
