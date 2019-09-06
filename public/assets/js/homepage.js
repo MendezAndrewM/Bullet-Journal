@@ -58,9 +58,11 @@ console.log("hello")
   function createNewGoalRow(goal){
     const newGoalRow = $([
       "<p>",
+      "User: ",
       goal.user_code,
       "</p>",
       "<span>",
+      "Goal: ",
       goal.goal_name,
       "</span>",
       `<button class='complete btn btn-primary'>✓</button>`,

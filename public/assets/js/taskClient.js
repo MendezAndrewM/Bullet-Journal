@@ -9,15 +9,27 @@ $(document).ready(function () {
     // $(document).on("click", "button.complete", toggleComplete);
   
   console.log("hello")
-  
+  if(document.location.pathname === '/tasks'){
     function getTasks() {
       $.get("/api/tasks", function (data) {
+        tasks = data;      
+        console.log(tasks)
+        initializeTaskRows();        
+      })
+    } 
+    getTasks(); 
+  }
+  else if (document.location.pathname === '/daily'){
+    function getDailyTasks() {
+      $.get("/api/daily", function (data) {        
         tasks = data;      
         console.log(tasks)
         initializeTaskRows();
         
       })
     }
+    getDailyTasks();
+  }
   
   
   
@@ -57,9 +69,11 @@ $(document).ready(function () {
     function createNewTaskRow(task){
       const newTaskRow = $([
         "<p>",
+        "User: ",
         task.user_code,
         "</p>",
         "<span>",
+        "Task: ",
         task.tasks,
         "</span>",
         `<button class='complete btn btn-primary'>✓</button>`,
@@ -75,7 +89,8 @@ $(document).ready(function () {
   }
   return newTaskRow
     }
-    getTasks();
+    // getTasks();
+    // getDailyTasks();
   
   
     function deleteTask(event){

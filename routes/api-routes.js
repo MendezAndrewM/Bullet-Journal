@@ -24,36 +24,13 @@ module.exports = function (app) {
         db.Tasks.findOne({ where: {id: req.params.id },})
         .then(dbTask => res.json(dbTask));
     });
-    // Users/api
-    app.get("/api/users", (req, res) => {
-        db.Users.findOne({
-            where: {
-                user_name: req.body.user
-            }
-        }).then((results) => {
-            if (res.data === undefined) {
-                
-            }
-            else if (res.data.password === true) {
-                res.json(results)
-            }
-            else {
-                alert("Password was wrong")
-            }
-            
-        })
+    app.get("/api/daily", (req, res) => {
+        db.Tasks.findAll({where: {task_frequency:'daily'}})
+        .then(dbTask => res.json(dbTask));
     });
-    //            
-    //      Or:
-    // app.get("/api/users", (req, res) => {
-    //     db.Users.findAll({ include: [db.Users]})
-    //     .then(dbUsers => res.json(dbUsers));
-    // });
-    // app.get("/api/users/:id", (req, res) => {
-    //     db.Users.findOne({ where: {id: req.params.id }, include: [db.Users]})
-    //     .then(dbUsers => res.json(dbUsers));
-    // });
     
+ 
+  
     
     ///////////////////////////////////////////////////////////////////////////
     /////////// POST Routes ///////////////////////////////////////////////////
