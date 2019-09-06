@@ -19,7 +19,7 @@
 
 <body>
     <div>
-        <img src="images/Marblelogotransparent.png" alt="Marble logo transparent" style="width:180px;height:130px;" />
+        <img src="assets/images/Marblelogotransparent.png" alt="Marble logo transparent" style="width:180px;height:130px;" />
     </div>
 
     <div class="container">
@@ -27,7 +27,7 @@
     <section id="row">
         <!-- <h4 class="sec-head">Here what others had to say&hellip;</h4> -->
         <div class="cust-quotes center-align">
-            <blockquote data-timeout="3800">
+            <blockquote data-timeout="1800">
                 <p>Push yourself, because no one else is going to do it for you.</p><cite></cite>
             </blockquote>
             <blockquote data-timeout="3800">
@@ -64,11 +64,11 @@
 
 
     <div class="carousel">
-        <a class="carousel-item" href="weekly.html"><img src="images/postityellow.png"></a>
-        <a class="carousel-item" href="daily.html"><img src="images/postitgreen.png"></a>
-        <a class="carousel-item" href="monthly.html"><img src="images/postitblue.png"></a>
-        <a class="carousel-item" href="allGoals.html"><img src="images/postitred.png"></a>
-        <a class="carousel-item" href="allTasks.html"><img src="images/postitpurple.png"></a>
+        <a class="carousel-item" href="weekly.html"><img src="assets/images/postityellow.png"></a>
+        <a class="carousel-item" href="daily.html"><img src="assets/images/postitgreen.png"></a>
+        <a class="carousel-item" href="monthly.html"><img src="assets/images/postitblue.png"></a>
+        <a class="carousel-item" href="allGoals.html"><img src="assets/images/postitred.png"></a>
+        <a class="carousel-item" href="allTasks.html"><img src="assets/images/postitpurple.png"></a>
 
     </div>
 
@@ -138,35 +138,14 @@
             Goal Four:
             <br>
             </div>
-                <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
-                <script>
-                  var trace1 = {
-  x: [1, 2, 3, 4],
-  y: [10, 15, 13, 17],
-  mode: 'markers'
-};
+  
 
-var trace2 = {
-  x: [2, 3, 4, 5],
-  y: [16, 5, 11, 10],
-  mode: 'lines'
-};
+              <!-- Bar chart -->
+          
+            <!-- Plotly chart will be drawn inside this div -->
+            <div id="myDiv"></div>
 
-var trace3 = {
-  x: [1, 2, 3, 4],
-  y: [12, 9, 15, 12],
-  mode: 'lines+markers'
-};
-
-var data = [ trace1, trace2, trace3 ];
-
-var layout = {};
-
-Plotly.newPlot('myDiv', data, layout, {showSendToCloud: true});
-                </script>
-
-</div>
-
+            <!-- Javascript linked on the .js file -->
 
 
 
