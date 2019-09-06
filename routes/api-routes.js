@@ -16,13 +16,8 @@ module.exports = function (app) {
         .then(dbGoal => res.json(dbGoal));
     });
     // Tasks/api
-<<<<<<< HEAD
-    app.get("/api/tasks", (req, res) => {
-        db.Tasks.findAll({ include: [db.Tasks]})
-=======
     app.get("/api/tasks", (req, res) => {        
         db.Tasks.findAll({})
->>>>>>> test
         .then(dbTask => res.json(dbTask));
     });
     app.get("/api/tasks/:id", (req, res) => {
@@ -64,13 +59,10 @@ module.exports = function (app) {
     /////////// POST Routes ///////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
     
-<<<<<<< HEAD
-=======
 
 
     ///////    CURRENT   ////////
 
->>>>>>> test
     app.post("/api/tasks", (req, res) => {
         db.tasks.create(req.body).then(dbPost => res.json(dbPost));
     });
@@ -117,8 +109,6 @@ module.exports = function (app) {
 //         });
 //       });
 // }
-<<<<<<< HEAD
-=======
 
 
     /////// Incoming /////////
@@ -134,17 +124,12 @@ module.exports = function (app) {
     //     db.Users.create(req.body).then(dbPost => res.json(dbPost));
     // });
 
->>>>>>> test
 
     ///////////////////////////////////////////////////////////////////////////
     /////////// DELETE Routes /////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
-    // app.delete("/", (req, res) => {
-=======
     // app.delete("/api/tasks/:id", (req, res) => {
->>>>>>> test
     //     db.Tasks.destroy({ where: { id: req.params.id }})
     //     .then(dbTask =>  res.json(dbTask));
     // });
@@ -158,13 +143,8 @@ module.exports = function (app) {
     /////////// PUT Routes ////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
-    // app.put("/" , (req, res) => {
-    //     db.Tasks.update(req.body, {where: { id: req.body.user_name }})
-=======
     // app.put("/api/tasks" , (req, res) => {
     //     db.Tasks.update(req.body, {where: { id: req.body.id }})
->>>>>>> test
     //     .then(dbTask =>  res.json(dbTask));
     // });
     // app.put("/api/goals" , (req, res) => {

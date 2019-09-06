@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-
-  
-=======
 // Or with jQuery
->>>>>>> test
 $(document).ready(function () {
 
   const goalsContainer = $(".goals-container");
@@ -11,26 +6,6 @@ $(document).ready(function () {
 
   $(document).on("click", "button.delete", deleteGoal);
   $(document).on("click", "button.complete", toggleComplete);
-<<<<<<< HEAD
-
-console.log("hello")
-
-  let goals = []
-  function getGoals() {
-    $.get("/api/goals", function (data) {
-      goals = data;
-      console.log(goals)
-      initializeGoalRows();
-    })
-  }
-
-
-
-  $("#submit-btn").on("click", insertNewGoal);
-
-
-  function insertNewGoal(event) {
-=======
   $(document).on("click", "button.delete", deleteTask);
 
   let tasks = []
@@ -45,7 +20,6 @@ console.log("hello")
   $("#submit-btn").on("click", insertNewTask);
 
   function insertNewTask(event) {
->>>>>>> test
     event.preventDefault();
     alert("zeb sucks")
     const goal = {
@@ -64,17 +38,6 @@ console.log("hello")
   function initializeGoalRows() {
     goalsContainer.empty();
     const rowsToAdd = [];
-<<<<<<< HEAD
-    for (let i = 0; i < goals.length; i++){
-      rowsToAdd.push(createNewGoalRow(goals[i]));
-    }
-    goalsContainer.prepend(rowsToAdd)
-
-  }
-
-  function createNewGoalRow(goal){
-    const newGoalRow = $([
-=======
     for (let i = 0; i < tasks.length; i++) {
       rowsToAdd.push(createNewTaskRow(tasks[i]));
     }
@@ -83,7 +46,6 @@ console.log("hello")
 
   function createNewTaskRow(task) {
     const newTaskRow = $([
->>>>>>> test
       "<p>",
       goal.user_code,
       "</p>",
@@ -92,32 +54,6 @@ console.log("hello")
       "</span>",
       "<button class='complete btn btn-primary'>✓</button>",
       "<button class='delete btn btn-danger'>x</button>"
-<<<<<<< HEAD
-
-
-    ].join("")
-);
-if (goals.complete){
-  newGoalRow.find("span").css("text-decoration", "line-through")
-}
-return newGoalRow
-  }
-  getGoals();
-
-
-  function deleteGoal(event){
-    event.stopPropagation();
-  }
-
-
-
-
-
-
-
-
-//   /////////////////carousel//////////////////
-=======
     ].join("")
     );
 
@@ -152,17 +88,9 @@ return newGoalRow
       url: "/api/tasks/" + id
     }).then(getTasks);
   }
->>>>>>> test
 
   getTasks();
 
   $('.carousel').carousel();
 
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> test
 });
