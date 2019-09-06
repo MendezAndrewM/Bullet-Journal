@@ -87,5 +87,6 @@ $(document).ready(function () {
   getTasks();
 
   $('.carousel').carousel();
+  $('select').formSelect();
 
 });
