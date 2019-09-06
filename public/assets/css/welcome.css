@@ -1,5 +1,7 @@
 body {
     background-image: url("../images/marblebackground1.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .jumbotron {
