@@ -16,8 +16,13 @@ module.exports = function (app) {
         .then(dbGoal => res.json(dbGoal));
     });
     // Tasks/api
+<<<<<<< HEAD
+    app.get("/api/tasks", (req, res) => {        
+        db.Tasks.findAll({})
+=======
     app.get("/api/tasks", (req, res) => {
         db.Tasks.findAll({ include: [db.Tasks]})
+>>>>>>> test
         .then(dbTask => res.json(dbTask));
     });
     app.get("/api/tasks/:id", (req, res) => {
@@ -59,6 +64,18 @@ module.exports = function (app) {
     /////////// POST Routes ///////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
     
+<<<<<<< HEAD
+    app.post("/", (req, res) => {
+        db.Tasks.create(req.body).then(dbPost => res.json(dbPost));
+    });
+    app.post("/api/goals", (req, res) => {
+        db.Goals.create(req.body).then(dbPost => res.json(dbPost));
+    });
+    app.post("/api/users", (req, res) => {
+        db.Users.create(req.body).then(dbPost => res.json(dbPost));
+    });
+
+=======
     app.post("/api/tasks", (req, res) => {
         db.tasks.create(req.body).then(dbPost => res.json(dbPost));
     });
@@ -105,20 +122,43 @@ module.exports = function (app) {
 //         });
 //       });
 // }
+>>>>>>> test
+
+    ///////////////////////////////////////////////////////////////////////////
+    /////////// DELETE Routes /////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
+
+    app.delete("/", (req, res) => {
+        db.Tasks.destroy({ where: { id: req.params.id }})
+        .then(dbTask =>  res.json(dbTask));
+    });
+    app.delete("/api/goals/:id", (req, res) => {
+        db.Goals.destroy({ where: { id: req.params.id }})
+        .then(dbGoal =>  res.json(dbGoal));
+    });
+
+
+    ///////////////////////////////////////////////////////////////////////////
+    /////////// PUT Routes ////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
+
+    app.put("/" , (req, res) => {
+        db.Tasks.update(req.body, {where: { id: req.body.user_name }})
+        .then(dbTask =>  res.json(dbTask));
+    });
+    app.put("/api/goals" , (req, res) => {
+        db.Goals.update(req.body, {where: { id: req.body.id }})
+        .then(dbGoal =>  res.json(dbGoal));
+    });
+
+
+}
 
 
 
 
-// /////////////////////////for password future//////////////////////////
-// .then((results)=>{
-//     if (res.data === undefined){
 
-//     }
-//     else if(res.data.password === true){
-//         res.json(results)
-//     }
-//     else{
-//         alert("Password was wrong")
-//     }
-
+<<<<<<< HEAD
+=======
 // })
+>>>>>>> test
