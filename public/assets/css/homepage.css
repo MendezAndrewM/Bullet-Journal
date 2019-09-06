@@ -1,7 +1,5 @@
 body {
-    background-image: url("marblebackground1.png");
-}
-
-.test {
-    font-family: cursive;
+    background-image: url("../images/marblenew.png");
+    background-repeat: repeat-y;
+    background-size: 100%;
 }

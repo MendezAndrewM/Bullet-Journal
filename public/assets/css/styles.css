@@ -40,9 +40,9 @@ ol, ul {
 
 /* background marble image */
 body {
-  background: url(marblebackground1.png);
-
-    background-size:cover;
+  background-image: url("../images/marblenew.png");
+  background-repeat: repeat-y;
+  background-size: 100%;
   }
 
 
