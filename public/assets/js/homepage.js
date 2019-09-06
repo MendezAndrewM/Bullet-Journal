@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 
   
+=======
+// Or with jQuery
+>>>>>>> test
 $(document).ready(function () {
 
   const goalsContainer = $(".goals-container");
@@ -7,6 +11,7 @@ $(document).ready(function () {
 
   $(document).on("click", "button.delete", deleteGoal);
   $(document).on("click", "button.complete", toggleComplete);
+<<<<<<< HEAD
 
 console.log("hello")
 
@@ -25,6 +30,22 @@ console.log("hello")
 
 
   function insertNewGoal(event) {
+=======
+  $(document).on("click", "button.delete", deleteTask);
+
+  let tasks = []
+  function getTasks() {
+    $.get("/api/tasks", function (data) {
+      tasks = data;
+      console.log(tasks)
+      initializeTaskRows();
+    })
+  }
+
+  $("#submit-btn").on("click", insertNewTask);
+
+  function insertNewTask(event) {
+>>>>>>> test
     event.preventDefault();
     alert("zeb sucks")
     const goal = {
@@ -43,6 +64,7 @@ console.log("hello")
   function initializeGoalRows() {
     goalsContainer.empty();
     const rowsToAdd = [];
+<<<<<<< HEAD
     for (let i = 0; i < goals.length; i++){
       rowsToAdd.push(createNewGoalRow(goals[i]));
     }
@@ -52,6 +74,16 @@ console.log("hello")
 
   function createNewGoalRow(goal){
     const newGoalRow = $([
+=======
+    for (let i = 0; i < tasks.length; i++) {
+      rowsToAdd.push(createNewTaskRow(tasks[i]));
+    }
+    taskContainer.prepend(rowsToAdd)
+  }
+
+  function createNewTaskRow(task) {
+    const newTaskRow = $([
+>>>>>>> test
       "<p>",
       goal.user_code,
       "</p>",
@@ -60,6 +92,7 @@ console.log("hello")
       "</span>",
       "<button class='complete btn btn-primary'>✓</button>",
       "<button class='delete btn btn-danger'>x</button>"
+<<<<<<< HEAD
 
 
     ].join("")
@@ -84,12 +117,52 @@ return newGoalRow
 
 
 //   /////////////////carousel//////////////////
+=======
+    ].join("")
+    );
 
+    newTaskRow.find("button.delete").data("id", task.id);
+    if (task.complete) {
+      newTaskRow.find("span").css("text-decoration", "line-through")
+    }
+    return newTaskRow
+  }
+
+  function updateTask(task) {
+    $.ajax({
+      method: "PUT",
+      url: "/api/tasks",
+      data: task
+    }).then(getTasks)
+  }
+
+  function toggleComplete(event) {
+    event.stopPropagation();
+    const task = $(this).parent().data();
+    console.log(task)
+    task.complete = !task.complete;
+    updateTask(task);
+  }
+
+  function deleteTask(event) {
+    event.stopPropagation();
+    const id = $(this).data("id");
+    $.ajax({
+      method: "DELETE",
+      url: "/api/tasks/" + id
+    }).then(getTasks);
+  }
+>>>>>>> test
+
+  getTasks();
 
   $('.carousel').carousel();
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> test
 });
