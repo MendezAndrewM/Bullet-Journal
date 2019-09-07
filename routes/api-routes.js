@@ -24,36 +24,22 @@ module.exports = function (app) {
         db.Tasks.findOne({ where: {id: req.params.id },})
         .then(dbTask => res.json(dbTask));
     });
-    // Users/api
-    app.get("/api/users", (req, res) => {
-        db.Users.findOne({
-            where: {
-                user_name: req.body.user
-            }
-        }).then((results) => {
-            if (res.data === undefined) {
-                
-            }
-            else if (res.data.password === true) {
-                res.json(results)
-            }
-            else {
-                alert("Password was wrong")
-            }
-            
-        })
+    app.get("/api/daily", (req, res) => {
+        db.Tasks.findAll({where: {task_frequency:'daily'}})
+        .then(dbTask => res.json(dbTask));
     });
-    //            
-    //      Or:
-    // app.get("/api/users", (req, res) => {
-    //     db.Users.findAll({ include: [db.Users]})
-    //     .then(dbUsers => res.json(dbUsers));
-    // });
-    // app.get("/api/users/:id", (req, res) => {
-    //     db.Users.findOne({ where: {id: req.params.id }, include: [db.Users]})
-    //     .then(dbUsers => res.json(dbUsers));
-    // });
+    app.get("/api/weekly", (req, res) => {
+        db.Tasks.findAll({where: {task_frequency:'weekly'}})
+        .then(dbTask => res.json(dbTask));
+    });
+    app.get("/api/monthly", (req, res) => {
+        db.Tasks.findAll({where: {task_frequency:'monthly'}})
+        .then(dbTask => res.json(dbTask));
+    });
     
+    
+ 
+  
     
     ///////////////////////////////////////////////////////////////////////////
     /////////// POST Routes ///////////////////////////////////////////////////
@@ -96,7 +82,7 @@ module.exports = function (app) {
         db.Tasks.update(req.body, {where: { id: req.body.id }})
         .then(dbTask =>  res.json(dbTask));
     });
-    app.put("/api/goals" , (req, res) => {
+    app.put("/api/goals/:id" , (req, res) => {
         db.Goals.update(req.body, {where: { id: req.body.id }})
         .then(dbGoal =>  res.json(dbGoal));
     });
