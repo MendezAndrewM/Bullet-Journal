@@ -41,6 +41,17 @@ $(document).ready(function () {
     }
     getWeeklyTasks();
   }
+  else if (document.location.pathname === '/monthly'){
+    function getMonthlyTasks() {
+      $.get("/api/monthly", function (data) {        
+        tasks = data;      
+        console.log(tasks)
+        initializeTaskRows();
+        
+      })
+    }
+    getMonthlyTasks();
+  }
   
   
   
