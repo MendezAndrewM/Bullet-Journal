@@ -54,7 +54,7 @@ $(document).ready(function () {
   function getGoals() {
     $.get("/api/goals", function (data) {
       goals = data;
-      console.log(goals)
+      //console.log(goals)
       initializeGoalRows();
     })
   }
@@ -66,13 +66,13 @@ $(document).ready(function () {
       goal_name: $("#user-goal").val().trim(),
       complete: false
     }
-    console.log(goal)
+    //console.log(goal)
     if (!goal.user_code || !goal.goal_name) {
       alert("Please fill out entire form")
     }
     else {
       alert("New goal added!")
-      console.log(goal)
+      //console.log(goal)
       $.post("/api/goals", goal);
       $("#user-goal-name").val("");
       $("#user-goal").val("");
