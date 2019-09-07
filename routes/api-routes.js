@@ -24,36 +24,22 @@ module.exports = function (app) {
         db.Tasks.findOne({ where: {id: req.params.id },})
         .then(dbTask => res.json(dbTask));
     });
-    // Users/api
-    app.get("/api/users", (req, res) => {
-        db.Users.findOne({
-            where: {
-                user_name: req.body.user
-            }
-        }).then((results) => {
-            if (res.data === undefined) {
-                
-            }
-            else if (res.data.password === true) {
-                res.json(results)
-            }
-            else {
-                alert("Password was wrong")
-            }
-            
-        })
+    app.get("/api/daily", (req, res) => {
+        db.Tasks.findAll({where: {task_frequency:'daily'}})
+        .then(dbTask => res.json(dbTask));
     });
-    //            
-    //      Or:
-    // app.get("/api/users", (req, res) => {
-    //     db.Users.findAll({ include: [db.Users]})
-    //     .then(dbUsers => res.json(dbUsers));
-    // });
-    // app.get("/api/users/:id", (req, res) => {
-    //     db.Users.findOne({ where: {id: req.params.id }, include: [db.Users]})
-    //     .then(dbUsers => res.json(dbUsers));
-    // });
+    app.get("/api/weekly", (req, res) => {
+        db.Tasks.findAll({where: {task_frequency:'weekly'}})
+        .then(dbTask => res.json(dbTask));
+    });
+    app.get("/api/monthly", (req, res) => {
+        db.Tasks.findAll({where: {task_frequency:'monthly'}})
+        .then(dbTask => res.json(dbTask));
+    });
     
+    
+ 
+  
     
     ///////////////////////////////////////////////////////////////////////////
     /////////// POST Routes ///////////////////////////////////////////////////
@@ -79,11 +65,11 @@ module.exports = function (app) {
     ///////////////////////////////////////////////////////////////////////////
 
     app.delete("/api/tasks/:id", (req, res) => {
-        db.tasks.destroy({ where: { id: req.params.id }})
+        db.Tasks.destroy({ where: { id: req.params.id }})
         .then(dbTask =>  res.json(dbTask));
     });
     app.delete("/api/goals/:id", (req, res) => {
-        db.goals.destroy({ where: { id: req.params.id }})
+        db.Goals.destroy({ where: { id: req.params.id }})
         .then(dbGoal =>  res.json(dbGoal));
     });
 

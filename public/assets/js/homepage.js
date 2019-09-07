@@ -5,7 +5,7 @@ $(document).ready(function () {
   let goals;
 
 
-  // $(document).on("click", "button.delete", deleteGoal);
+  $(document).on("click", "button.delete", deleteGoal);
   // $(document).on("click", "button.complete", toggleComplete);
 
   console.log("hello")
@@ -15,6 +15,7 @@ $(document).ready(function () {
       goals = data;
       console.log(goals)
       initializeGoalRows();
+      
     })
   }
 
@@ -25,7 +26,7 @@ $(document).ready(function () {
 
   function insertNewGoal(event) {
     event.preventDefault();
-    alert("zeb sucks")
+    // alert("zeb sucks")
     const goal = {
       user_code: $("#user-name").val().trim(),
       goal_name: $("#user-goal").val().trim(),
@@ -42,11 +43,16 @@ $(document).ready(function () {
   function initializeGoalRows() {
     goalsContainer.empty();
     const rowsToAdd = [];
-    for (let i = 0; i < goals.length; i++) {
+    const button = [];
+    for (let i = 0; i < goals.length; i++){
       rowsToAdd.push(createNewGoalRow(goals[i]));
+      button.push(buttonTest(goals[i]))
     }
     goalsContainer.prepend(rowsToAdd)
 
+  }
+  function buttonTest(goal){
+    `<button class='complete btn btn-primary'>${goal.user_code}</button>`
   }
 
 
@@ -70,15 +76,15 @@ $(document).ready(function () {
   function createNewGoalRow(goal) {
     const newGoalRow = $([
       "<p>",
+      "User: ",
       goal.user_code,
       "</p>",
       "<span>",
+      "Goal: ",
       goal.goal_name,
       "</span>",
       `<button class='complete btn btn-primary' id = '${goal.id}'>✓</button>`,
-      "<button class='delete btn btn-danger'>x</button>"
-
-
+      `<button class='delete btn btn-danger'id = ${goal.id}>x</button>`,
     ].join("")
     );
     if (goals.complete) {
@@ -89,9 +95,18 @@ $(document).ready(function () {
   getGoals();
 
 
-  // function deleteGoal(event){
-  //   event.stopPropagation();
-  // }
+  function deleteGoal(event){
+    event.stopPropagation();
+    id = $(this).attr("id")
+    console.log(id)
+    $.ajax({
+      method: "DELETE",
+      url: "/api/goals/" + id
+    }).then(getGoals)
+
+
+  }
+ 
 
 
 
@@ -104,6 +119,7 @@ $(document).ready(function () {
 
 
   $('.carousel').carousel();
+  $('select').formSelect();
 
 
 

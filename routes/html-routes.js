@@ -17,7 +17,22 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/allGoals.html"));
   });
 
-  app.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
-  })
+  app.get("/tasks", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/allTasks.html"));
+  });
+
+  app.get("/weekly", function (req, res) {    //who dis?
+    res.sendFile(path.join(__dirname, "../public/weekly.html"));
+  });
+
+  app.get("/monthly", function (req, res) {    //who dis?
+    res.sendFile(path.join(__dirname, "../public/monthly.html"));
+  });
+
+  app.get("/daily", function (req, res) {    //who dis?
+    res.sendFile(path.join(__dirname, "../public/daily.html"));
+  });
+
+
+
 }
