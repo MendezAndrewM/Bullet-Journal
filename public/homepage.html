@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Homepage</title>
+  <title>MARBLE Homepage</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -16,7 +16,7 @@
 
 <body>
     <div>
-        <a href="/home"><img src="./assets/images/Marblelogonew.png" title="hyperlink"
+        <a href="homepage.html"><img src="./assets/images/Marblelogonew.png" title="hyperlink"
                 style="width:300px;height:140px;" /></a>
     </div>
 
@@ -55,12 +55,13 @@
     <br>
     <br>
 
+    <!-- ***************updated html links -->
   	<div class="carousel">
-        <a class="carousel-item" href="/goals"><img src="assets/images/postitred.png"></a>
-<a class="carousel-item" href="/weekly"><img src="assets/images/postityellow.png"></a>
-<a class="carousel-item" href="/daily"><img src="assets/images/postitgreen.png"></a>
-<a class="carousel-item" href="/monthly"><img src="assets/images/postitblue.png"></a>
-<a class="carousel-item" href="/tasks"><img src="assets/images/postitpurple.png"></a>
+        <a class="carousel-item" href="allGoals.html"><img src="assets/images/postitred.png"></a>
+<a class="carousel-item" href="weekly.html"><img src="assets/images/postityellow.png"></a>
+<a class="carousel-item" href="daily.html"><img src="assets/images/postitgreen.png"></a>
+<a class="carousel-item" href="monthly.html"><img src="assets/images/postitblue.png"></a>
+<a class="carousel-item" href="allTasks.html"><img src="assets/images/postitpurple.png"></a>
 </div>
 
     <span class="task-container">
@@ -68,7 +69,8 @@
 
     <div class="row">
       <div class="allcontainer">
-        <div class="col s6">Enter user name and task here:
+          <!-- ****************updated with a <p> tag, to update font -->
+        <div class="col s6"><p class="b">Enter user name and task here:</p>
           <div class="whiteBox">
             <div class="row">
               <form class="col s12">
@@ -93,17 +95,20 @@
                   </form>
                 </div>
               </form>
+
+              <div class="input-field col s12">
+                    <select class = "user-frequency">
+                      <label ></label>
+                      <option  disabled selected>How often should this task be completed?</option>
+                      <option  value="daily">Daily</option>
+                      <option  value="weekly">Weekly</option>
+                      <option value="monthly">Monthly</option>
+                    </select>
+                  </div>
+
             </div>
           </div>
-              <div class="input-field col s12">
-              <select class = "user-frequency">
-                <label ></label>
-                <option  disabled selected>How often should this task be completed?</option>
-                <option  value="daily">Daily</option>
-                <option  value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-              </select>
-            </div>
+          
           <br>
           <div style="text-align:center">
             <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">Submit
@@ -113,7 +118,7 @@
 
       <div class="row">
           <div class="allcontainer">
-            <div class="col s6">Enter user name and goal here:
+            <div class="col s6"><p class="b">Enter user name and goal here:</p>
               <div class="whiteBox">
                 <div class="row">
                   <form class="col s12">
@@ -138,6 +143,17 @@
                       </form>
                     </div>
                   </form>
+
+                  <div class="input-field col s12">
+                        <select class = "user-frequency">
+                          <label ></label>
+                          <option  disabled selected>How often should this task be completed?</option>
+                          <option  value="daily">Daily</option>
+                          <option  value="weekly">Weekly</option>
+                          <option value="monthly">Monthly</option>
+                        </select>
+                      </div>
+
                 </div>
               </div>
           <br>
@@ -147,7 +163,8 @@
         </div>
       </div>
     </div>
-    <br>
+    
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
