@@ -1,14 +1,15 @@
- 
-$(document).ready(function () {
 
-    const taskContainer = $(".task-container");
-    const btnContainer = $(".btn-container")
-    let tasks;
+$(document).ready(function () {
+  
+  const taskContainer = $(".task-container");
+  
+  let tasks;
   
   
+  $("#submit-btn").on("click", insertNewTask);
     $(document).on("click", "button.delete", deleteTask);
-    // $(document).on("click", "button.complete", toggleComplete);
-  
+    $(document).on("click", "button.complete", markComplete)
+    
   console.log("hello")
   if(document.location.pathname === '/tasks'){
     function getTasks() {
@@ -58,7 +59,6 @@ $(document).ready(function () {
   
   
   
-    $("#submit-btn").on("click", insertNewTask);
   
   
     function insertNewTask(event) {
@@ -91,17 +91,16 @@ $(document).ready(function () {
       }      
       taskContainer.prepend(rowsToAdd)      
     }
-    function initializeButtons(){
-      btnContainer.empty();
-      const button = [];
-      
-      for (let i = 0; i < tasks.length; i++){
-        console.log(tasks[i].user_code)
-            
-      }     
-      console.log(button)
-      btnContainer.append(button)
-  }
+    function markComplete(event) {
+      event.stopPropagation();
+      id = $(this).attr("id")
+      $.ajax({
+        method: "PUT",
+        url: `/api/tasks/${id}`,
+        data: { id: id, complete: true }
+      }).then(getTasks)
+    }
+  
 
     // function buttonTest(task){      
     //   `<button class='complete btn btn-primary'>${task.user_code}</button>` 
@@ -118,7 +117,7 @@ $(document).ready(function () {
         "Task: ",
         task.tasks,
         "</span>",
-        `<button class='complete btn btn-primary'>✓</button>`,
+        `<button class='complete btn btn-primary' id = '${task.id}'>✓</button>`,
         `<button class='delete btn btn-danger'id = ${task.id}>x</button>`,
        
         
