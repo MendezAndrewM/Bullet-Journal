@@ -74,7 +74,7 @@ $(document).ready(function () {
       }
       else{
         alert("New task added!")
-      console.log(task)
+      //console.log(task)
       $.post("/api/tasks", task);
       $("#user-name").val("");
       $("#user-task").val("");
