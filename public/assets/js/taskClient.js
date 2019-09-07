@@ -10,12 +10,12 @@ $(document).ready(function () {
     $(document).on("click", "button.delete", deleteTask);
     $(document).on("click", "button.complete", markComplete)
     
-  console.log("hello")
+  //console.log("hello")
   if(document.location.pathname === '/tasks'){
     function getTasks() {
       $.get("/api/tasks", function (data) {
         tasks = data;      
-        console.log(tasks)
+        //console.log(tasks)
         initializeTaskRows();        
       })
     } 
@@ -25,7 +25,7 @@ $(document).ready(function () {
     function getDailyTasks() {
       $.get("/api/daily", function (data) {        
         tasks = data;      
-        console.log(tasks)
+        //console.log(tasks)
         initializeTaskRows();
        initializeButtons();
         
@@ -37,7 +37,7 @@ $(document).ready(function () {
     function getWeeklyTasks() {
       $.get("/api/weekly", function (data) {        
         tasks = data;      
-        console.log(tasks)
+        //console.log(tasks)
         initializeTaskRows();
         
         
@@ -49,7 +49,7 @@ $(document).ready(function () {
     function getMonthlyTasks() {
       $.get("/api/monthly", function (data) {        
         tasks = data;      
-        console.log(tasks)
+        //console.log(tasks)
         initializeTaskRows();
         
       })
