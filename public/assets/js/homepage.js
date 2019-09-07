@@ -68,10 +68,16 @@ $(document).ready(function () {
       goal_name: $("#user-goal").val().trim(),
       complete: false
     }
-    console.log(goal)
-    $.post("/api/goals", goal);
-    $("#user-name").val("");
-    $("#user-goal").val("");
+    if (!goal.user_code || !goal.goal_name) {
+      alert("PLease fill out entire form")
+    }
+    else {
+      alert("New goal added!")
+      console.log(goal)
+      $.post("/api/goals", goal);
+      $("#user-name").val("");
+      $("#user-goal").val("");
+    }
   };
 
   function markComplete(event) {
