@@ -4,7 +4,7 @@ $(document).ready(function () {
   //////////  Event Handlers  /////////////////////////////////////////////////
 
   $(document).on("click", "button.delete", deleteGoal);
-  $("#submit-btn").on("click", insertNewGoal);
+  $("#submit-goalbtn").on("click", insertNewGoal);
   $(document).on("click", "button.complete", markComplete)
 
 
@@ -62,20 +62,21 @@ $(document).ready(function () {
   }
 
   function insertNewGoal(event) {
-    event.preventDefault();
+    event.preventDefault();    
     const goal = {
-      user_code: $("#user-name").val().trim(),
+      user_code: $("#user-goal-name").val().trim(),
       goal_name: $("#user-goal").val().trim(),
       complete: false
     }
+    console.log(goal)
     if (!goal.user_code || !goal.goal_name) {
-      alert("PLease fill out entire form")
+      alert("Please fill out entire form")
     }
     else {
       alert("New goal added!")
       console.log(goal)
       $.post("/api/goals", goal);
-      $("#user-name").val("");
+      $("#user-goal-name").val("");
       $("#user-goal").val("");
     }
   };
@@ -104,5 +105,25 @@ $(document).ready(function () {
   $('.carousel').carousel();
   $('select').formSelect();
   getGoals();
+
+  ////rotating quotes////
+  function initQuoteCarousel() {
+
+    var $quotesWrapper = $(".cust-quotes");
+    var $quotes = $quotesWrapper.find("blockquote");
+
+    if (!$quotes.length) {
+        return;
+    }
+
+    var selectNextQuote = function () {
+        // keep move first quote in dom to the end to make continous
+        var $quote = $quotesWrapper.find("blockquote:first").detach().appendTo($quotesWrapper);
+
+        setTimeout(selectNextQuote, $quote.data("timeout"));
+    };
+  }
+    initQuoteCarousel();
+
 
 });
