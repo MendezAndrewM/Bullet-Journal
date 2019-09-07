@@ -12,12 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
-
     <!-- Plotly.js -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 </head>
-
 
 <body>
     <div>
@@ -25,12 +23,8 @@
                 style="width:300px;height:140px;" /></a>
     </div>
 
-
-
     <div class="container">
-
         <section id="row">
-
             <div class="cust-quotes center-align">
                 <blockquote data-timeout="1800">
                     <p>Push yourself, because no one else is going to do it for you.</p><cite></cite>
@@ -60,13 +54,8 @@
             </div>
         </section>
 
-
-
         <br>
         <br>
-
-
-
 
         <div class="carousel">
             <a class="carousel-item" href="weekly.html"><img src="assets/images/postityellow.png"></a>
@@ -74,52 +63,14 @@
             <a class="carousel-item" href="monthly.html"><img src="assets/images/postitblue.png"></a>
             <a class="carousel-item" href="allGoals.html"><img src="assets/images/postitred.png"></a>
             <a class="carousel-item" href="allTasks.html"><img src="assets/images/postitpurple.png"></a>
-
         </div>
-        <div class="goals-container"></div>
 
-        <div class="whiteBox">
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <form class="col s12">
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <textarea id="user-name" class="materialize-textarea"></textarea>
-                                    <label for="textarea1">User Name</label>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="row">
-                        <form class="col s12">
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <textarea id="user-goal" class="materialize-textarea"></textarea>
-                                    <label for="textarea1">Task</label>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <textarea id="user-frequency" class="materialize-textarea"></textarea>
-                            <label for="textarea1">How often?</label>
-                        </div>
-                    </div>
-                </form>
+        <div class="allcontainer">Goals
+            <div class="whiteBox">
             </div>
-        </form>
-    </div> -->
-            </div>
-            <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-            </button>
+        </div>
 
-
-            <!-- <br>
+        <!-- <br>
     <br>
     <a class="waves-effect waves-light btn-small"><i class="material-icons left" class="add-button">Add a Task</i></a>
     &nbsp;
@@ -130,13 +81,11 @@
             Task</i></a>
             &nbsp;
     <a class="waves-effect waves-light btn-small"><i class="material-icons right" class="completed-button">Completed
-            Tasks</i></a> --> -->
+            Tasks</i></a> -->
 
-
-
-            <br>
-            <br>
-            <!-- <div class="whiteBox goals-container">
+        <br>
+        <br>
+        <!-- <div class="whiteBox goals-container">
             Track Your Weekly Goals:
             <br>
             Goal One:
@@ -148,22 +97,16 @@
             Goal Four:
             <br>
         </div> -->
+        <!-- Bar chart -->
 
+        <!-- Plotly chart will be drawn inside this div -->
+        <!-- <div id="myDiv"></div> -->
 
+        <!-- Javascript linked on the .js file -->
 
-            <!-- Bar chart -->
-
-            <!-- Plotly chart will be drawn inside this div -->
-            <div id="myDiv"></div>
-
-            <!-- Javascript linked on the .js file -->
-
-
-
-
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            <script type="text/javascript" src="assets/js/homepage.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script type="text/javascript" src="assets/js/homepage.js"></script>
 </body>
 
 </html>

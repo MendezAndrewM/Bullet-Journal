@@ -1,16 +1,12 @@
 
-
-
-
-
 /* background marble image */
 body {
   background-image: url("../images/marblenew.png");
   background-repeat: repeat-y;
   background-size: 100%;
+  font: 14px/20px Arial,sans-serif;
+  color:#222;
   }
-
-
 
 /* Changing quote display */
 blockquote, q {
@@ -26,11 +22,6 @@ table {
 	border-spacing: 0;
 }
 
-
-body {
-    font: 14px/20px Arial,sans-serif;
-    color:#222;
-  }
   .cust-quotes {
     width: 900px;
     height:100px;
@@ -94,8 +85,6 @@ body {
     width:940px;
   }
 
-
-
   .row {
     font-weight: bold;
   }
@@ -104,10 +93,19 @@ body {
 
  .whiteBox {
    background-color: white;
-   
    border: 1px solid rgb(143, 143, 143);
+   padding: 20px;
  }
 
  blockquote {
    border: none;
+ }
+
+ #submit-btn {
+  justify-items: center;
+ }
+
+ .allcontainer {
+   font-size: 20px;
+   font-weight: bolder;
  }
