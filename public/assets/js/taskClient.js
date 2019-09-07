@@ -62,20 +62,25 @@ $(document).ready(function () {
   
   
     function insertNewTask(event) {
-      event.preventDefault();
-    //   alert("zeb sucks")
+      event.preventDefault();    
       const task = {
         user_code: $("#user-name").val().trim(),
         tasks: $("#user-task").val().trim(),
         task_frequency: $("#user-frequency").val().trim(),
         complete: false
       }
+      if(!task.user_code || !task.tasks || !task.task_frequency){
+        alert("PLease fill out entire form")
+      }
+      else{
+        alert("New task added!")
       console.log(task)
       $.post("/api/tasks", task);
       $("#user-name").val("");
       $("#user-task").val("");
       $("#user-frequency").val("");
-    };
+    }
+  };
   
     function initializeTaskRows() {
       taskContainer.empty();
