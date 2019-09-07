@@ -1,18 +1,18 @@
- 
+
 $(document).ready(function () {
 
   const goalsContainer = $(".goals-container");
   let goals;
 
 
-  $(document).on("click", "button.delete", deleteGoal);
-  $(document).on("click", "button.complete", toggleComplete);
+  // $(document).on("click", "button.delete", deleteGoal);
+  // $(document).on("click", "button.complete", toggleComplete);
 
-console.log("hello")
+  console.log("hello")
 
   function getGoals() {
     $.get("/api/goals", function (data) {
-      goals = data;      
+      goals = data;
       console.log(goals)
       initializeGoalRows();
     })
@@ -42,14 +42,32 @@ console.log("hello")
   function initializeGoalRows() {
     goalsContainer.empty();
     const rowsToAdd = [];
-    for (let i = 0; i < goals.length; i++){
+    for (let i = 0; i < goals.length; i++) {
       rowsToAdd.push(createNewGoalRow(goals[i]));
     }
     goalsContainer.prepend(rowsToAdd)
 
   }
 
-  function createNewGoalRow(goal){
+
+
+  function markComplete(event) {
+    event.stopPropagation();
+    id = $(this).attr("id")
+    $.ajax({
+      method: "PUT",
+      url: `/api/goals/${id}`,
+      data: { id: id, complete: true }
+    }).then(getGoals)
+  }
+
+
+
+  $(document).on("click", "button.complete", markComplete)
+
+
+
+  function createNewGoalRow(goal) {
     const newGoalRow = $([
       "<p>",
       goal.user_code,
@@ -57,16 +75,16 @@ console.log("hello")
       "<span>",
       goal.goal_name,
       "</span>",
-      "<button class='complete btn btn-primary'>✓</button>",
+      `<button class='complete btn btn-primary' id = '${goal.id}'>✓</button>`,
       "<button class='delete btn btn-danger'>x</button>"
 
 
     ].join("")
-);
-if (goals.complete){
-  newGoalRow.find("span").css("text-decoration", "line-through")
-}
-return newGoalRow
+    );
+    if (goals.complete) {
+      newGoalRow.find("span").css("text-decoration", "line-through")
+    }
+    return newGoalRow
   }
   getGoals();
 
@@ -82,7 +100,7 @@ return newGoalRow
 
 
 
-//   /////////////////carousel//////////////////
+  //   /////////////////carousel//////////////////
 
 
   $('.carousel').carousel();

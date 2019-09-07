@@ -96,7 +96,7 @@ module.exports = function (app) {
         db.Tasks.update(req.body, {where: { id: req.body.id }})
         .then(dbTask =>  res.json(dbTask));
     });
-    app.put("/api/goals" , (req, res) => {
+    app.put("/api/goals/:id" , (req, res) => {
         db.Goals.update(req.body, {where: { id: req.body.id }})
         .then(dbGoal =>  res.json(dbGoal));
     });
