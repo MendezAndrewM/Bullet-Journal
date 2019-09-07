@@ -2,6 +2,7 @@
 $(document).ready(function () {
 
     const taskContainer = $(".task-container");
+    const btnContainer = $(".btn-container")
     let tasks;
   
   
@@ -25,6 +26,7 @@ $(document).ready(function () {
         tasks = data;      
         console.log(tasks)
         initializeTaskRows();
+       initializeButtons();
         
       })
     }
@@ -36,6 +38,7 @@ $(document).ready(function () {
         tasks = data;      
         console.log(tasks)
         initializeTaskRows();
+        buttonTest();
         
       })
     }
@@ -76,17 +79,29 @@ $(document).ready(function () {
   
     function initializeTaskRows() {
       taskContainer.empty();
-      const rowsToAdd = [];
-      const button = [];
+      const rowsToAdd = [];      
       for (let i = 0; i < tasks.length; i++){
-        rowsToAdd.push(createNewTaskRow(tasks[i]));
-        button.push(buttonTest(tasks[i]))
-      }
-      taskContainer.prepend(rowsToAdd)
-  
+        // console.log(tasks[i])
+        rowsToAdd.push(createNewTaskRow(tasks[i]));       
+      }      
+      taskContainer.prepend(rowsToAdd)      
     }
-    function buttonTest(task){
-    }
+    function initializeButtons(){
+      btnContainer.empty();
+      const button = [];
+      
+      for (let i = 0; i < tasks.length; i++){
+        console.log(tasks[i].user_code)
+        button.push(buttonTest(tasks[i]));       
+      }     
+      console.log(button)
+      btnContainer.append(button)
+  }
+
+    // function buttonTest(task){      
+    //   `<button class='complete btn btn-primary'>${task.user_code}</button>` 
+
+    // }
     
     function createNewTaskRow(task){
       const newTaskRow = $([
@@ -100,7 +115,7 @@ $(document).ready(function () {
         "</span>",
         `<button class='complete btn btn-primary'>✓</button>`,
         `<button class='delete btn btn-danger'id = ${task.id}>x</button>`,
-        `<button class='complete btn btn-primary'>${task.user_code}</button>`
+       
         
   
   
