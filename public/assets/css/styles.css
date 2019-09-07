@@ -109,3 +109,10 @@ table {
    font-size: 20px;
    font-weight: bolder;
  }
+
+
+
+ p.b {
+  font-family: Georgia, serif;
+  font-style: oblique;
+}
