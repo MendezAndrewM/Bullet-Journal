@@ -38,7 +38,7 @@ $(document).ready(function () {
         tasks = data;      
         console.log(tasks)
         initializeTaskRows();
-        buttonTest();
+        
         
       })
     }
@@ -97,7 +97,7 @@ $(document).ready(function () {
       
       for (let i = 0; i < tasks.length; i++){
         console.log(tasks[i].user_code)
-        button.push(buttonTest(tasks[i]));       
+            
       }     
       console.log(button)
       btnContainer.append(button)
@@ -137,16 +137,23 @@ $(document).ready(function () {
   
     function deleteTask(event){
       event.stopPropagation();
-      id = $(this).attr("id")
-      console.log(id)
+      id = $(this).attr("id")           
       $.ajax({
         method: "DELETE",
         url: "/api/tasks/" + id
-      }).then(getTasks)
-  
+      }).then(getTasks) 
   
     }
-   
+    // function deleteDailyTask(event){
+    //   event.stopPropagation();
+    //   id = $(this).attr("id")
+    //   // console.log(id)      
+    //   $.ajax({
+    //     method: "DELETE",
+    //     url: "/api/daily/" + id
+    //   }).then(getTasks) 
+  
+    // }
   
   
   

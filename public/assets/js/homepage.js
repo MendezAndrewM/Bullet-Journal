@@ -18,10 +18,10 @@ $(document).ready(function () {
   function initializeGoalRows() {
     goalsContainer.empty();
     const rowsToAdd = [];
-    const button = [];
+    
     for (let i = 0; i < goals.length; i++) {
       rowsToAdd.push(createNewGoalRow(goals[i]));
-      button.push(buttonTest(goals[i]))
+      
     }
     goalsContainer.prepend(rowsToAdd)
   }
@@ -46,10 +46,8 @@ $(document).ready(function () {
     return newGoalRow
   }
 
-  function buttonTest(goal) {
-    `<button class='complete btn btn-primary'>${goal.user_code}</button>`
-  }
 
+  // `<button class='complete btn btn-primary'>${goal.user_code}</button>`
 
   ////////// CRUD Functions ///////////////////////////////////////////////////
 
