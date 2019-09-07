@@ -56,7 +56,7 @@ $(document).ready(function () {
     return newTaskRow
   }
 
-  
+
 
   ////////// CRUD Functions ///////////////////////////////////////////////////
   if (document.location.pathname === '/tasks') {
@@ -110,7 +110,7 @@ $(document).ready(function () {
     const task = {
       user_code: $("#user-name").val().trim(),
       tasks: $("#user-task").val().trim(),
-      task_frequency: $("#user-frequency").val().trim(),
+      task_frequency: $("#user-frequency").val(),
       complete: false
     }
     if (!task.user_code || !task.tasks || !task.task_frequency) {
@@ -122,7 +122,7 @@ $(document).ready(function () {
       $.post("/api/tasks", task);
       $("#user-name").val("");
       $("#user-task").val("");
-      $("#user-frequency").val("");
+      $(".user-frequency").val("");
     }
   };
 
