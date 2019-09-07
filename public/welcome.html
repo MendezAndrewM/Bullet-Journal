@@ -11,6 +11,7 @@
 
 	<link rel="stylesheet" href="assets/css/reset.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link rel="stylesheet" href="assets/css/styles.css"> 
 	<link rel="stylesheet" href="assets/css/welcome.css">
 
@@ -19,27 +20,32 @@
 </head>
 
 <body>
-	<div>
-		<img src="assets/images/Marblelogotransparent.png" alt="Marble logo" style="width:160px;height:115px;" />
-	</div>
 	<div class="container">
 		<div class="jumbotron">
 			<h1>Welcome to Marble!</h1>
 			<p>Where you can polish up your life.</p>
-			<a href="homepage.html"><button class='button'>LET'S GO!</button></a>
+
+			<!-- *********************updated href -->
+			<a href="/home"><button class='button'>Add new task or goal!</button></a>
 			<!-- <a href="monthly.html"><button>LET'S GO!</button></a> -->
+			
+			<!-- <div class="carousel">
+				<a class="carousel-item" href="/tasks"><img src="assets/images/postitpurple.png"></a>
+				<a class="carousel-item" href="/weekly"><img src="assets/images/postityellow.png"></a>
+				<a class="carousel-item" href="/daily"><img src="assets/images/postitgreen.png"></a>
+				<a class="carousel-item" href="/monthly"><img src="assets/images/postitblue.png"></a>
+				<a class="carousel-item" href="/goals"><img src="assets/images/postitred.png"></a>
+			</div> -->
+
+
 		</div>
 	</div>
 
 	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script type="text/javascript" src="assets/js/homepage.js"></script>
 
-	<div class="carousel">
-		<a class="carousel-item" href="weekly.html"><img src="images/postityellow.png"></a>
-		<a class="carousel-item" href="daily.html"><img src="images/postitgreen.png"></a>
-		<a class="carousel-item" href="monthly.html"><img src="images/postitblue.png"></a>
-		<a class="carousel-item" href="allGoals.html"><img src="images/postitred.png"></a>
-		<a class="carousel-item" href="allTasks.html"><img src="images/postitpurple.png"></a>
-	</div>
 </body>
 
 </html> 
