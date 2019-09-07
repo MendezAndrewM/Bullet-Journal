@@ -1,20 +1,18 @@
 
 $(document).ready(function () {
+  
+  //////////  Global Variables  ///////////////////////////////////////////////
+  const goalsContainer = $(".goals-container");
+  let goals;
 
+  
   //////////  Event Handlers  /////////////////////////////////////////////////
-
   $(document).on("click", "button.delete", deleteGoal);
   $("#submit-btn").on("click", insertNewGoal);
   $(document).on("click", "button.complete", markComplete)
 
 
-  //////////  Global Variables  ///////////////////////////////////////////////
-  const goalsContainer = $(".goals-container");
-  let goals;
-
-
-  //////////  Create Buttons  /////////////////////////////////////////////////
-
+  //////////  Display Goals  //////////////////////////////////////////////////
   function initializeGoalRows() {
     goalsContainer.empty();
     const rowsToAdd = [];
